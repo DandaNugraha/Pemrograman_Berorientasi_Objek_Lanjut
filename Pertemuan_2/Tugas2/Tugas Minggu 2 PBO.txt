@@ -1,0 +1,54 @@
+﻿
+Nama: Danda Hudan Nugraha
+NIM: 210511077
+Kelas: TIF21B(R2) 
+Matkul: PBO
+Tugas: Berikan contoh Desain Aplikasi Database yang menerapkan konsep Inheritance. (Jelaskan saja bukan untuk bikin aplikasi)
+
+Secara umum, ketika kita mengembangkan aplikasi, kita akan mengikuti proses sebagai berikut.
+
+- Identifikasi entitas yang terkait dengan aplikasi
+- Mengidentifikasi atribut yang terkait dengan aplikasi.
+- Sekarang pisahkan atribut dari setiap entitas dalam urutan hierarkis tanpa duplikat.
+- Ubah entitas tersebut menjadi kelas.
+
+Proses Pengembangan Aplikasi Database:
+Jadi, secara umum, ketika kita sedang mengembangkan aplikasi dengan inheritance, prosesnya lengkapnya adalah sebagai berikut.
+
+Langkah 1: Identifikasi Entitas yang terkait dengan aplikasi
+
+Misalkan, kita sedang mengembangkan aplikasi untuk Universitas. Kemudian untuk Aplikasi Mahasiswa ini, siapa entitasnya. Mahasiswa adalah Entitas. Staf Pengajar adalah Entitas. Staf Non Pengajar adalah Entitas lain. Seperti ini, kita dapat mengidentifikasi entitas. Jadi, dalam aplikasi ini, kita telah mengidentifikasi tiga entitas.
+
+Entitas: Siswa, Staf Pengajar, Staf Non Pengajaran
+
+Langkah 2: Identifikasi atribut dari setiap entitas.
+Entitas : Mahasiswa
+Atribut Mahasiswa : NIM, Nama, Alamat, Telp, Kelas, Nilai, Nilai, Biaya
+
+Entitas:
+Atribut StafPengajar: KTP, Nama, Alamat, Telepon, Jabatan, Gaji, Kualifikasi, Mata Pelajaran
+
+Entitas:
+Atribut StafNonPengajar: Id, Nama, Alamat, Telepon, Jabatan, Gaji, DeptName, ManagerId
+
+Langkah 3: Identifikasi atribut umum dan letakkan dalam urutan hierarkis
+
+Orang berisi empat atribut Id, Nama, Alamat, dan Nomor Telepon. Di bawah Orang, kita memiliki Siswa dan Staf. Siswa mewarisi dari Orang, jadi secara default Siswa akan mendapatkan keempat atribut tersebut, dan semua atribut lainnya ditentukan di dalam Entitas Siswa. Kemudian Entitas Staf yang juga diwarisi dari Orang dan karenanya keempat atribut umum tersebut juga tersedia dan ditambahditambah, kita telah mendefinisikan atribut umum untuk entitas Pengajar dan NonPengajar di dalam entitas Staf. Jadi, Staf akan berisi enam atribut. Pada akhirnya, Pengajar dan NonPengajar diwarisi dari Entitas Staf.
+
+Jadi, besok jika staf sementara muncul, maka properti ini juga berlaku untuk staf sementara. Yang perlu Anda lakukan adalah membuat Entitas baru dengan properti spesifik dan mewarisinya dari entitas Staf.
+
+Langkah 4: Mendefinisikan kelas yang mewakili entitas dalam urutan Hirarkis
+
+Setelah mengidentifikasi atribut dari setiap entitas, selanjutnya kita perlu mendefinisikan kelas yang mewakili setiap entitas. Yaitu satu kelas mewakili Mahasiswa, satu kelas mewakili tenaga pengajar, dan satu kelas lagi mewakili tenaga non pengajar. Tapi, jika kita mendefinisikan tiga kelas yang mewakili satu entitas, maka ada masalah. Masalahnya adalah ada beberapa atribut umum di setiap entitas. Jadi, jika kita mulai mendefinisikan tiga kelas satu per satu, maka ada duplikasi kode. Mengapa duplikasi kode? Lihat, kita perlu mendefinisikan Id tiga kali, Nama tiga kali, Alamat tiga kali, dan Nomor telepon tiga kali. Seperti ini, kita memiliki duplikasi dalam kode.
+
+Dan kita bekerja dengan bahasa pemrograman berorientasi objek, bukan bahasa pemrograman berorientasi prosedur, dan kekuatan bahasa pemrograman berorientasi objek adalah penggunaan kembali kode, bukan duplikasi kode. Jika kita tidak dapat menggunakan reusability, maka tidak ada gunanya masuk ke pemrograman berorientasi objek.
+
+Jadi, yang perlu kita lakukan adalah menghilangkan redundansi atau duplikat. Lihat, dalam bahasa berorientasi prosedur, kita menggunakan struktur untuk mewakili entitas. Dalam DBMS kita menggunakan tabel untuk mewakili entitas dan dalam pemrograman berorientasi objek, kita menggunakan kelas untuk mewakili entitas.
+
+Sayangnya, struktur tersebut tidak mendukung pewarisan. Struktur tidak mendukung pewarisan, kita perlu mendefinisikan tiga entitas dengan atribut duplikat. Id, Nama, Alamat, dan Nomor telepon harus digandakan di ketiga struktur. Dan ini sepenuhnya bertentangan dengan standar pemrograman berorientasi objek.
+
+Untuk ketiga entitas yang merupakan atribut umum? Id, Nama, Alamat, dan Telepon adalah atribut umum. Mari kita letakkan atribut umum ini di kelas yang disebut Orang. Setelah kita mendefinisikan kelas ini sekali, kita menjadikan kelas ini sebagai kelas Induk, maka tidak perlu mendefinisikan atribut ini tiga kali. Suatu kali kita perlu mendeklarasikan di kelas induk dan kemudian kita menggunakan properti ini di bawah semua kelas anak.
+
+Sekarang kita dapat mendefinisikan sebuah class bernama Mahasiswa yang mewarisi dari class Orang. Dan di kelas Mahasiswa, kita hanya perlu mendefinisikan atribut Kelas, Jenjang, dan Jurusan karena Id, Nama, Alamat, dan Nomor Telepon berasal dari kelas induk Person. Lakukan hal ini juga pada Staf pengajar & NonPengajar. 
+
+
