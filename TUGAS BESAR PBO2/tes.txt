@@ -1,0 +1,7 @@
+admin
+username: danda
+password: 123
+
+pelanggan
+username: hudan
+password: 123
